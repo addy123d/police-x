@@ -1,0 +1,77 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="../public/css/login.css")
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300&family=Eczar&display=swap" rel="stylesheet"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="../public/img/logo.png" />
+        title Police-X (Login)
+    body 
+        header#nav-area
+        div#navbar
+            a(href="http://policex.herokuapp.com").logo 
+                div#logo
+                    img(src="../public/img/logo.png", alt="", srcset="")
+                    h1 #[span P]olice - X
+            ul
+                li #[a(href='/') Home]
+                li #[a(href="http://") About Us]
+                li #[a(href="#news") News]
+                li #[a(href="http://") Services]
+                li #[a(href="/login") Login]
+        
+
+        div.container
+            div.img
+                img(src="../public/img/logo.png", alt="police-X")
+            div.login-container
+                div.wrapper
+                    div.title-text
+                        div.title.login Login
+                        div.title.signup Sign Up   
+
+                    div.msg  
+
+                    div.form-container
+                        div.slide-controls
+                            input(type="radio", name="slider" id="login" checked)
+                            input(type="radio", name="slider" id="signup")
+                            label(for="login" class="slide login") Login 
+                            label(for="signup" class="slide signup") Sign Up  
+                            div.slide-tab
+                        div.form-inner
+                            form(action="/api/login" method="POST" class='login')#login-form
+                                div.field
+                                    input(type="email" id="login-email" name="email" placeholder="Email Address" required).inp
+                                div.field
+                                    input(type="password" id="login-password" name="password" placeholder="Password" required).inp
+                                div.pass-link
+                                    a(href="#") Forgot Password?
+                                div.field
+                                    input(type="submit", value="Login").btn
+                                div.signup-link Not a member? 
+                                    a(href="#") Signup Now 
+                            
+                            form(action="/api/register" method="POST" class='login')#reg-form
+                                div.field#name
+                                    input(type="text" id="fName" name="fName" placeholder="First Name" required).inp
+                                    input(type="text" id="lName" name="lName" placeholder="Last Name" required).inp      
+                                div.field
+                                    input(type="email" id = "emailAdd" name="emailAdd" placeholder="Email Address" required).inp
+                                div.field
+                                    input(type="password" id="pass" name="pass" placeholder="Password" required).inp
+                                div.field
+                                    input(type="password" id="cpass" placeholder="Confirm Password" required).inp
+                                div.field
+                                    input(type="submit", value="Sign Up").btn
+        
+        script(src="../public/scripts/login.js") 
